@@ -1,0 +1,6 @@
+1. Consulta que permite conocer cuál es el producto que mas stock tiene
+SELECT t.descripcion, t.existencia FROM productos t WHERE t.existencia = (SELECT MAX(existencia) FROM productos);
+
+
+2. Consulta que permite conocer cual es el producto mas vendido
+SELECT t.id_producto, t.cantidad FROM productos_vendidos t WHERE t.cantidad = (SELECT MAX(cantidad) FROM productos_vendidos);
